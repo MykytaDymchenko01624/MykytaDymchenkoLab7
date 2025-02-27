@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--Mykyta Dymchenko N01624422-->
 <resources>
     <string name="app_name">MykytaLab7</string>
     <string name="menu_home">Accueil</string>
@@ -12,6 +12,7 @@
     <string name="option_3">Option 3</string>
     <string name="province">PROVINCE</string>
     <string name="index">INDEX</string>
+    <string name="alert_ok">OK</string>
     <string-array name="provinces_array">
         <item>Alberta</item>
         <item>Colombie-Britannique</item>

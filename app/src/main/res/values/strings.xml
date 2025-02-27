@@ -28,6 +28,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="province">PROVINCE</string>
     <string name="index">INDEX</string>
+    <string name="alert_ok">OK</string>
     <integer-array name="province_colors">
         <item>@color/blue</item>
         <item>@color/magenta</item>

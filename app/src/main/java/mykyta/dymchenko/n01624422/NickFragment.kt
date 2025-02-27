@@ -74,7 +74,7 @@ class NickFragment : Fragment() {
         builder.setTitle(getString(R.string.mykyta_dymchenko))
         builder.setMessage(message)
         builder.setCancelable(false)
-        builder.setPositiveButton("OK") { dialog, _ ->
+        builder.setPositiveButton(getString(R.string.alert_ok)) { dialog, _ ->
             dialog.dismiss()
         }
 
