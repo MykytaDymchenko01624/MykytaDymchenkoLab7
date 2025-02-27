@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +23,9 @@ class PersonFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var selectedItem: String? = null
+    private var selectedIndex: Int = -1
+    private lateinit var listView: ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +40,38 @@ class PersonFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_person, container, false)
+        val view = inflater.inflate(R.layout.fragment_person, container, false)
+
+        view.setBackgroundColor(android.graphics.Color.parseColor("#90EE90"))
+
+        listView = view.findViewById(R.id.listViewProvinces)
+
+        val provinces = resources.getStringArray(R.array.provinces_array)
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_activated_1, provinces)
+        listView.adapter = adapter
+
+        listView.choiceMode = ListView.CHOICE_MODE_SINGLE
+
+        listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+            selectedItem = provinces[position]
+            selectedIndex = position + 1
+            sendDataToSettingsFragment()
+        }
+
+        return view
+    }
+
+    private fun sendDataToSettingsFragment() {
+        val settingsFragment = SettingsFragment()
+        val bundle = Bundle()
+        bundle.putString("selectedItem", selectedItem)
+        bundle.putInt("selectedIndex", selectedIndex)
+        settingsFragment.arguments = bundle
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, settingsFragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     companion object {
