@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/MykPB"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
         android:max="100" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/MykImgBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/the_weeknd_hurry_up_tomorrow" />

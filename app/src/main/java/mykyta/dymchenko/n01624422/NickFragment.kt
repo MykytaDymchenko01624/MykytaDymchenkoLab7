@@ -1,3 +1,4 @@
+// Mykyta Dymchenko N01624422
 package mykyta.dymchenko.n01624422
 
 import android.graphics.Color
@@ -44,16 +45,16 @@ class NickFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_nick, container, false)
 
-        view.setBackgroundColor(Color.parseColor("#FFFFE0"))
+        view.setBackgroundColor(getResources().getColor(R.color.nick_frag_bg))
 
-        val fullNameTextView: TextView = view.findViewById(R.id.fullNameTextView)
+        val fullNameTextView: TextView = view.findViewById(R.id.MykStudentTV)
         fullNameTextView.text = getString(R.string.mykyta_dymchenko)
         fullNameTextView.setTextColor(Color.BLUE)
 
-        radioGroup = view.findViewById(R.id.radioGroup)
-        radioButton1 = view.findViewById(R.id.radioButton1)
-        radioButton2 = view.findViewById(R.id.radioButton2)
-        radioButton3 = view.findViewById(R.id.radioButton3)
+        radioGroup = view.findViewById(R.id.MykRG)
+        radioButton1 = view.findViewById(R.id.MykRB1)
+        radioButton2 = view.findViewById(R.id.MykRB2)
+        radioButton3 = view.findViewById(R.id.MykRB3)
 
         radioButton1.isChecked = true
 

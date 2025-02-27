@@ -1,3 +1,4 @@
+// Mykyta Dymchenko N01624422
 package mykyta.dymchenko.n01624422
 
 import android.graphics.Color
@@ -52,12 +53,14 @@ class SettingsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
-        clockTextView = view.findViewById(R.id.clockTextView)
-        provinceTextView = view.findViewById(R.id.provinceTextView)
-        indexTextView = view.findViewById(R.id.indexTextView)
+        clockTextView = view.findViewById(R.id.MykClockTV)
+        provinceTextView = view.findViewById(R.id.MykProvinceTV)
+        indexTextView = view.findViewById(R.id.MykIndexTV)
 
         provinceTextView.text = getString(R.string.province)
         indexTextView.text = getString(R.string.index)
+
+        view.setBackgroundColor(getResources().getColor(R.color.settings_frag_bg))
 
         parentFragmentManager.setFragmentResultListener("requestKey", this) { _, bundle ->
             val selectedItem = bundle.getString("selectedItem")

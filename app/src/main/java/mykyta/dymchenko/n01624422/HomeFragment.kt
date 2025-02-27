@@ -1,3 +1,4 @@
+//Mykyta Dymchenko N01624422
 package mykyta.dymchenko.n01624422
 
 import android.graphics.Color
@@ -39,16 +40,16 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        view.setBackgroundColor(Color.parseColor("#ADD8E6"))
+        view.setBackgroundColor(getResources().getColor(R.color.home_frag_bg))
 
-        progressBar = view.findViewById(R.id.progressBar)
-        imageButton = view.findViewById(R.id.imageButton)
+        progressBar = view.findViewById(R.id.MykPB)
+        imageButton = view.findViewById(R.id.MykImgBtn)
 
         progressBar.progress = 20
 
         imageButton.setOnClickListener {
             counter++
-            Toast.makeText(context, getString(R.string.student_name) + counter, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.student_name) +" + "+ counter, Toast.LENGTH_SHORT).show()
             progressBar.progress += 20
             if (counter == 5) {
                 progressBar.visibility = View.GONE

@@ -15,4 +15,8 @@
     <color name="purple">#800080</color>
     <color name="teal">#008080</color>
     <color name="olive">#808000</color>
+    <color name="nick_frag_bg">#FFFFE0</color>
+    <color name="person_frag_bg">#90EE90</color>
+    <color name="settings_frag_bg">#E6E6FA</color>
+    <color name="home_frag_bg">#ADD8E6</color>
 </resources>

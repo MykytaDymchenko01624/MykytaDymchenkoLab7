@@ -1,3 +1,4 @@
+// Mykyta Dymchenko N01624422
 package mykyta.dymchenko.n01624422
 
 import android.os.Bundle
@@ -39,9 +40,9 @@ class PersonFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_person, container, false)
 
-        view.setBackgroundColor(android.graphics.Color.parseColor("#90EE90"))
+        view.setBackgroundColor(getResources().getColor(R.color.person_frag_bg))
 
-        listView = view.findViewById(R.id.listViewProvinces)
+        listView = view.findViewById(R.id.MykLV)
 
         val provinces = resources.getStringArray(R.array.provinces_array)
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_activated_1, provinces)
