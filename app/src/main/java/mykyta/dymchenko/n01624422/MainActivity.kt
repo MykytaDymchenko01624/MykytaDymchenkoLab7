@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView = findViewById(R.id.bottomNav)
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.menu_settings -> replaceFragment(HomeFragment())
+                R.id.menu_settings -> replaceFragment(SettingsFragment())
                 R.id.menu_nick -> replaceFragment(NickFragment())
                 R.id.menu_person -> replaceFragment(PersonFragment())
                 R.id.menu_home -> replaceFragment(HomeFragment())

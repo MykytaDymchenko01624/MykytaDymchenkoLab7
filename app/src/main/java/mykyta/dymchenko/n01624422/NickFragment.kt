@@ -70,7 +70,7 @@ class NickFragment : Fragment() {
     private fun showAlertDialog(message: String) {
         val builder = AlertDialog.Builder(requireContext())
         builder.setIcon(R.drawable.images)
-        builder.setTitle("Mykyta Dymchenko")
+        builder.setTitle(getString(R.string.mykyta_dymchenko))
         builder.setMessage(message)
         builder.setCancelable(false)
         builder.setPositiveButton("OK") { dialog, _ ->

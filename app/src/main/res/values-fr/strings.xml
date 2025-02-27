@@ -10,6 +10,8 @@
     <string name="option_1">Option 1</string>
     <string name="option_2">Option 2</string>
     <string name="option_3">Option 3</string>
+    <string name="province">PROVINCE</string>
+    <string name="index">INDEX</string>
     <string-array name="provinces_array">
         <item>Alberta</item>
         <item>British Columbia</item>

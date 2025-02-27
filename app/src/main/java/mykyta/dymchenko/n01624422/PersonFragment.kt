@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import androidx.core.os.bundleOf
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,11 +36,7 @@ class PersonFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_person, container, false)
 
         view.setBackgroundColor(android.graphics.Color.parseColor("#90EE90"))
@@ -62,16 +59,8 @@ class PersonFragment : Fragment() {
     }
 
     private fun sendDataToSettingsFragment() {
-        val settingsFragment = SettingsFragment()
-        val bundle = Bundle()
-        bundle.putString("selectedItem", selectedItem)
-        bundle.putInt("selectedIndex", selectedIndex)
-        settingsFragment.arguments = bundle
-
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, settingsFragment)
-            .addToBackStack(null)
-            .commit()
+        val result = bundleOf("selectedItem" to selectedItem, "selectedIndex" to selectedIndex)
+        parentFragmentManager.setFragmentResult("requestKey", result)
     }
 
     companion object {
