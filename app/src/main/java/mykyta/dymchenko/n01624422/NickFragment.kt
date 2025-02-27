@@ -56,8 +56,6 @@ class NickFragment : Fragment() {
         radioButton2 = view.findViewById(R.id.MykRB2)
         radioButton3 = view.findViewById(R.id.MykRB3)
 
-        radioButton1.isChecked = true
-
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             val selectedRadioButton = view.findViewById<RadioButton>(checkedId)
             val selectedText = selectedRadioButton.text.toString()
