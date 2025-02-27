@@ -13,8 +13,12 @@ import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var bottomNavigationView: BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,6 +30,17 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.fragmentContainer, HomeFragment())
                 .commit()
         }
+
+        bottomNavigationView = findViewById(R.id.bottomNav)
+        bottomNavigationView.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_settings -> replaceFragment(HomeFragment())
+                R.id.menu_nick -> replaceFragment(NickFragment())
+                R.id.menu_person -> replaceFragment(PersonFragment())
+                R.id.menu_home -> replaceFragment(HomeFragment())
+            }
+            true
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -36,10 +51,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.up_settings -> openAppSettings()
-            R.id.menu_settings -> replaceFragment(HomeFragment())
-            R.id.menu_nick -> replaceFragment(NickFragment())
-            //R.id.menu_person -> replaceFragment(PersonFragment())
-            R.id.menu_home -> replaceFragment(HomeFragment())
         }
         return super.onOptionsItemSelected(item)
     }
