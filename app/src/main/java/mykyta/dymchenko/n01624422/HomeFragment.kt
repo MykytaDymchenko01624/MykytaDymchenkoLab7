@@ -1,7 +1,6 @@
 //Mykyta Dymchenko N01624422
 package mykyta.dymchenko.n01624422
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        view.setBackgroundColor(getResources().getColor(R.color.home_frag_bg))
+        view.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.home_frag_bg))
 
         progressBar = view.findViewById(R.id.MykPB)
         imageButton = view.findViewById(R.id.MykImgBtn)

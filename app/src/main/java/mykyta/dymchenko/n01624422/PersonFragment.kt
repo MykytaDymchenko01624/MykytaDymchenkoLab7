@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,7 +41,7 @@ class PersonFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_person, container, false)
 
-        view.setBackgroundColor(getResources().getColor(R.color.person_frag_bg))
+        view.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.person_frag_bg))
 
         listView = view.findViewById(R.id.MykLV)
 

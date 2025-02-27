@@ -11,6 +11,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,7 +46,7 @@ class NickFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_nick, container, false)
 
-        view.setBackgroundColor(getResources().getColor(R.color.nick_frag_bg))
+        view.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.nick_frag_bg))
 
         val fullNameTextView: TextView = view.findViewById(R.id.MykStudentTV)
         fullNameTextView.text = getString(R.string.mykyta_dymchenko)

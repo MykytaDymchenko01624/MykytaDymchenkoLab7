@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -57,7 +58,7 @@ class SettingsFragment : Fragment() {
         provinceTextView.text = getString(R.string.province)
         indexTextView.text = getString(R.string.index)
 
-        view.setBackgroundColor(getResources().getColor(R.color.settings_frag_bg))
+        view.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.settings_frag_bg))
 
         parentFragmentManager.setFragmentResultListener("requestKey", this) { _, bundle ->
             val selectedItem = bundle.getString("selectedItem")
