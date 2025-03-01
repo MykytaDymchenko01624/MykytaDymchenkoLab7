@@ -36,7 +36,3 @@ This Android application, named "MykytaLab7," is designed to showcase various co
 *   Localization
 *   `Calendar`
 *   `SimpleDateFormat`
-
-## Image
-
-![Alt text](images/the_weeknd.png)
